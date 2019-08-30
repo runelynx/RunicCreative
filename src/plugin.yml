@@ -4,6 +4,7 @@ author: runelynx
 description: "Bukkit plugin for Runic Paradise server."
 main: io.github.runelynx.RunicCreative.RunicCreative
 version: 0.1
+api-version: 1.14
 commands:
    migrategroups:
       description: "Fix rank problems."

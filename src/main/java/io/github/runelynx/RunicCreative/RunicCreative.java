@@ -78,7 +78,9 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 
 
 		rankColors.put("default", ChatColor.GRAY);
-		rankColors.put("Builder", ChatColor.BLUE);
+		rankColors.put("builder", ChatColor.BLUE);
+        rankColors.put("staff", ChatColor.DARK_RED);
+        rankColors.put("staff+", ChatColor.DARK_RED);
 
 
 		Bukkit.getLogger().log(Level.INFO, "RunicCreative plugin is loaded!");
@@ -150,7 +152,10 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 
 		String staffPrefix = ChatColor.DARK_GRAY + "" +ChatColor.ITALIC + "CR ";
 		if (event.getPlayer().hasPermission("rp.staff")) {
-			if ((event.getPlayer().hasPermission("rp.staff.admin"))) {
+
+		    // The rank itself designates staff in Creative. No need for the extra tag.
+
+		    /*	if ((event.getPlayer().hasPermission("rp.staff.admin"))) {
 				staffPrefix += ChatColor.DARK_RED + "<Admin> ";
 			} else if ((event.getPlayer().hasPermission("rp.staff.director"))) {
 				staffPrefix += ChatColor.DARK_RED + "<Director> ";
@@ -161,19 +166,22 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 			} else if ((event.getPlayer().hasPermission("rp.staff.helper"))) {
 				staffPrefix += ChatColor.DARK_RED + "<Helper> ";
 			}
-
+*/
 		} else if (event.getPlayer().hasPermission("rp.guide")) {
 			staffPrefix += ChatColor.DARK_GREEN + "<Guide> ";
 		}
 
+		//Capitalize
+		String groupName = perms.getPrimaryGroup(event.getPlayer()).substring(0, 1).toUpperCase() + perms.getPrimaryGroup(event.getPlayer()).substring(1);
+
 		event.setFormat(staffPrefix
 				+ RunicCreative.rankColors.get(perms.getPrimaryGroup(event
-						.getPlayer()))
-				+ perms.getPrimaryGroup(event.getPlayer())
+						.getPlayer()).toLowerCase())
+				+ groupName
 				+ ChatColor.GRAY
 				+ " "
 				+ RunicCreative.rankColors.get(perms.getPrimaryGroup(event
-						.getPlayer())) + event.getPlayer().getDisplayName()
+						.getPlayer()).toLowerCase()) + event.getPlayer().getDisplayName()
 				+ ChatColor.WHITE + ": %2$s");
 
 	}
