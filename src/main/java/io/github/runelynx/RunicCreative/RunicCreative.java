@@ -93,7 +93,7 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 		try {
 			// clear the table
 			Statement insertStmt = z.createStatement();
-			getLogger().log(Level.SEVERE, "Connected to MysQL successfully. ");
+			getLogger().info("Connected to MySQL successfully.");
 			z.close();
 		} catch (SQLException e) {
 			getLogger().log(
