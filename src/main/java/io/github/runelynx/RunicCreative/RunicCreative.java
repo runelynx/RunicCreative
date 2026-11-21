@@ -77,7 +77,7 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 		}
 
 
-		rankColors.put("default", ChatColor.GRAY);
+		rankColors.put("default", ChatColor.BLUE);
 		rankColors.put("builder", ChatColor.BLUE);
         rankColors.put("staff", ChatColor.DARK_RED);
         rankColors.put("staff+", ChatColor.DARK_RED);
@@ -150,29 +150,21 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent event) throws IOException {
 
-		String staffPrefix = ChatColor.DARK_GRAY + "" +ChatColor.ITALIC + "CR ";
-		if (event.getPlayer().hasPermission("rp.staff")) {
-
-		    // The rank itself designates staff in Creative. No need for the extra tag.
-
-		    /*	if ((event.getPlayer().hasPermission("rp.staff.admin"))) {
-				staffPrefix += ChatColor.DARK_RED + "<Admin> ";
-			} else if ((event.getPlayer().hasPermission("rp.staff.director"))) {
-				staffPrefix += ChatColor.DARK_RED + "<Director> ";
-			} else if ((event.getPlayer().hasPermission("rp.staff.architect"))) {
-				staffPrefix += ChatColor.DARK_RED + "<Architect> ";
-			} else if ((event.getPlayer().hasPermission("rp.staff.enforcer"))) {
-				staffPrefix += ChatColor.DARK_RED + "<Enforcer> ";
-			} else if ((event.getPlayer().hasPermission("rp.staff.helper"))) {
-				staffPrefix += ChatColor.DARK_RED + "<Helper> ";
-			}
-*/
-		} else if (event.getPlayer().hasPermission("rp.guide")) {
-			staffPrefix += ChatColor.DARK_GREEN + "<Guide> ";
-		}
-
 		//Capitalize
 		String groupName = perms.getPrimaryGroup(event.getPlayer()).substring(0, 1).toUpperCase() + perms.getPrimaryGroup(event.getPlayer()).substring(1);
+
+		String staffPrefix = ChatColor.DARK_GRAY + "" +ChatColor.ITALIC + "CR ";
+		if (event.getPlayer().hasPermission("rp.staff")) {
+			if (event.getPlayer().hasPermission("rp.staffplus")) {
+				staffPrefix += ChatColor.DARK_RED + "<Staff+> ";
+			} else if (event.getPlayer().hasPermission("rp.staff")) {
+				staffPrefix += ChatColor.DARK_RED + "<Staff> ";
+			}
+		} else if (event.getPlayer().hasPermission("rp.guide")) {
+			staffPrefix += ChatColor.DARK_GREEN + "<Guide> ";
+		} else {
+			groupName = "Builder";
+		}
 
 		event.setFormat(staffPrefix
 				+ RunicCreative.rankColors.get(perms.getPrimaryGroup(event
