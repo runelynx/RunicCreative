@@ -228,50 +228,42 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 		treeLore.add(ChatColor.YELLOW
 				+ "near Astrid to unlock it here, though.");
 
-		ItemStack tree = new ItemStack(Material.BAMBOO_SAPLING, 1, (short) 3);
+		ItemStack tree = new ItemStack(Material.BAMBOO_SAPLING, 1);
 		meta = tree.getItemMeta();
 		meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD
 				+ "Astrid Warp Menu");
 		meta.setLore(treeLore);
 		tree.setItemMeta(meta);
 
-		ItemStack flower1 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower1 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower1.getItemMeta();
 		meta.setDisplayName("");
 		flower1.setItemMeta(meta);
-		ItemStack flower2 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower2 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower2.getItemMeta();
 		meta.setDisplayName("");
 		flower2.setItemMeta(meta);
-		ItemStack flower3 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower3 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower3.getItemMeta();
 		meta.setDisplayName("");
 		flower3.setItemMeta(meta);
-		ItemStack flower4 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower4 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower4.getItemMeta();
 		meta.setDisplayName("");
 		flower4.setItemMeta(meta);
-		ItemStack flower5 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower5 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower5.getItemMeta();
 		meta.setDisplayName("");
 		flower5.setItemMeta(meta);
-		ItemStack flower6 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower6 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower6.getItemMeta();
 		meta.setDisplayName("");
 		flower6.setItemMeta(meta);
-		ItemStack flower7 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower7 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower7.getItemMeta();
 		meta.setDisplayName("");
 		flower7.setItemMeta(meta);
-		ItemStack flower8 = new ItemStack(Material.ROSE_BUSH, 1,
-				(short) random.nextInt(8 + 1));
+		ItemStack flower8 = new ItemStack(Material.ROSE_BUSH, 1);
 		meta = flower8.getItemMeta();
 		meta.setDisplayName("");
 		flower8.setItemMeta(meta);
@@ -291,15 +283,13 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 
 		if (p.hasPermission("ru.astrid.survival")) {
 
-			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1,
-					(short) 5);
+			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1);
 
 			meta = survivalIcon.getItemMeta();
 			meta.setDisplayName("Warp to Survival");
 			survivalIcon.setItemMeta(meta);
 		} else {
-			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1,
-					(short) 15);
+			survivalIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1);
 
 			ArrayList<String> survivalIconLore = new ArrayList<String>();
 			survivalIconLore.add(ChatColor.RED
@@ -314,15 +304,13 @@ public class RunicCreative extends JavaPlugin implements PluginMessageListener,
 		}
 
 		if (p.hasPermission("ru.astrid.skyblock")) {
-			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1,
-					(short) 3);
+			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1);
 
 			meta = skyblockIcon.getItemMeta();
 			meta.setDisplayName("Warp to Skyblock");
 			skyblockIcon.setItemMeta(meta);
 		} else {
-			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1,
-					(short) 15);
+			skyblockIcon = new ItemStack(Material.CYAN_STAINED_GLASS_PANE, 1);
 
 			ArrayList<String> skyblockIconLore = new ArrayList<String>();
 			skyblockIconLore.add(ChatColor.RED
