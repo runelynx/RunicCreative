@@ -29,7 +29,6 @@ import org.bukkit.plugin.Plugin;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 
-import mkremins.fanciful.FancyMessage;
 
 /**
  * 
